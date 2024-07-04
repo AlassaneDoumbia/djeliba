@@ -1,0 +1,15 @@
+{
+  "title": "Djéliba",
+  "welcome": "Bienvenu",
+  "welcomeMsg": "Bienvenue sur Djéliba",
+  "motivationTxt": "Cette journée est t'elle productive ?",
+  "error": "Une erreur est survenu lors de l'opération",
+  "errorLogin": "Une erreur est survenu lors de la connection, merci de vérifier les informations fournis",
+  "invalidNumber": "Veuillez entrer un numero valide",
+  "ok": "OK",
+  "homeMsg": "Prepare like you have never won and perform like you have never lost.",
+  "connect": "Connexion",
+  "username": "Numéro",
+  "rememberMe": "Se souvenir de moi",
+  "password": "Mot de passe"
+}

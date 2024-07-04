@@ -1,0 +1,25 @@
+
+
+
+query Login($loginInput: LoginInput!) {
+  login(loginInput: $loginInput) {
+    access_token,
+    user {
+      _id,
+      phone,
+      firstname,
+      country,
+      city,
+      address,
+      lastname,
+      email,
+      createdAt,
+      fcmtokens
+    }
+  }
+}
+
+fragment LoginSuccess on LoginSuccess {
+  accessToken
+  refreshToken
+}
