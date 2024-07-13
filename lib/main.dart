@@ -19,7 +19,7 @@ void main() async {
   final storageService = locator<SecureStorageService>();
   AuthData authData = await storageService.getAuthData();
   // define the initial route based on whether the user is logged in or not
-  String initialRoute = (authData != null && authData.accessToken != null) ? '/' : 'login';
+  String initialRoute = (authData != null && authData.accessToken != null) ? '/home' : '/login';
   runApp(
     EasyLocalization(
         supportedLocales: const [Locale('fr', 'FR'), Locale('en', 'US'), Locale('de', 'DE')],

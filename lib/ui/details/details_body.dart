@@ -68,7 +68,7 @@ class DetailsBody extends StatelessWidget {
                     ),
                     __itemValue(
                       title: "pointB".tr(),
-                      value: "${delivery.addressB} / ${delivery.phoneB}",
+                      value: delivery.orderHasBeenPickedUp ? "${delivery.addressB} / ${delivery.phoneB}" : "",
                     ),
                     __itemValue(
                       title: "amount".tr(),
@@ -160,20 +160,102 @@ class DetailsBody extends StatelessWidget {
                         progressColor: kPrimaryColor,
                       ),
                     ),
-                    Column(
-                      children: values.keys.map(
-                            (String key) {
-                          return CheckboxListTile(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("cancel".tr()),
+                            activeColor: Colors.green,
+                            controlAffinity: ListTileControlAffinity.leading,
+                            value: delivery.orderHasBeenPickedUp,
+                            onChanged: (value) => print(value)
+
+                          ),
+                        ),
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("ongoing".tr()),
+                            activeColor: Colors.green,
+                            controlAffinity: ListTileControlAffinity.leading,
+                            value: false,
+                            onChanged: (value) => print(value)
+
+                          ),
+                        ),
+                        
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("ongoing".tr()),
                             controlAffinity: ListTileControlAffinity.leading,
                             activeColor: Colors.green,
-                            value: values[key],
-                            title: Text(key),
-                            onChanged: (value) => (value) => print(value),
-                            // onChanged: (value) => detailsVm.onChangedvalueCheck(value!),
-                          );
-                        },
-                      ).toList(),
+                            value: false,
+                            onChanged: (value) => print(value)
+
+                          ),
+                        ),
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("delivered".tr()),
+                            activeColor: Colors.green,
+                            controlAffinity: ListTileControlAffinity.leading,
+                            value: false,
+                            onChanged: (value) =>  print(value)
+
+                          ),
+                        ),
+                        
+                      ],
                     ),
+                    Row(
+  //                                             "cancel": "Annuler",
+  // "notdelivered": "Non Livré",
+  // "unreachable": "Non Joingnable",
+  // "unavailable": "Non disponible",
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("notdelivered".tr()),
+                            controlAffinity: ListTileControlAffinity.leading,
+                            activeColor: Colors.green,
+                            value: false,
+                            onChanged: (value) => print(value)
+
+                          ),
+                        ),
+                        Expanded(
+                          child: CheckboxListTile(
+                            title: Text("recover".tr()),
+                            activeColor: Colors.green,
+                            controlAffinity: ListTileControlAffinity.leading,
+                            value: false,
+                            onChanged: (value) => print(value)
+
+                          ),
+                        ),
+                        
+                      ],
+                    ),
+                    // Column(
+                    //   children: values.keys.map(
+                    //         (String key) {
+                    //       return CheckboxListTile(
+                    //         controlAffinity: ListTileControlAffinity.leading,
+                    //         activeColor: Colors.green,
+                    //         value: values[key],
+                    //         title: Text(key),
+                    //         onChanged: (value) => (value) => print(value),
+                    //         // onChanged: (value) => detailsVm.onChangedvalueCheck(value!),
+                    //       );
+                    //     },
+                    //   ).toList(),
+                    // ),
                   ],
                 ),
               ),

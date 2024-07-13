@@ -28,6 +28,7 @@ class DeliverService extends ChangeNotifier {
         nameB,
         state,
         status,
+        orderHasBeenPickedUp,
         createdAt
       }
     }

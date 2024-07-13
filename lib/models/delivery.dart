@@ -12,6 +12,7 @@ class Delivery {
   final String? phoneA;
   final String? phoneB;
   final String state;
+  final bool orderHasBeenPickedUp;
   final String status;
   final String createdAt;
 
@@ -29,6 +30,7 @@ class Delivery {
     required this.phoneB,
     required this.state,
     required this.status,
+    required this.orderHasBeenPickedUp,
     required this.createdAt,
   });
 
@@ -81,6 +83,7 @@ class Delivery {
       phoneB: data["phoneB"].toString(),
       state: data["state"].toString(),
       status: data["status"].toString(),
+      orderHasBeenPickedUp: data["orderHasBeenPickedUp"],
       createdAt: data["createdAt"].toString(),
     );
   }

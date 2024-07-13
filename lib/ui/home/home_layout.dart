@@ -34,6 +34,7 @@ class HomeLayout extends StatelessWidget {
             nameB,
             state,
             status,
+            orderHasBeenPickedUp,
             createdAt
             }
           }
